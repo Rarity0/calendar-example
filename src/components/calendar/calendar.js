@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CalendarDays from '../calendar-days/calendar-days';
+import CalendarDays from '../calendar-days/calendar-days'
 import './calendar.css'
 
 export default class Calendar extends Component {

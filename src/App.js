@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import Calendar from './calendar';
+import Calendar from './components/calendar/calendar';
 
 function App() {
   return (
