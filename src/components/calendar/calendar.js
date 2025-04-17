@@ -10,6 +10,7 @@ export default class Calendar extends Component {
     this.months = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'];
 
+      // CurrentDay = today
     this.state = {
       currentDay: new Date()
     }
@@ -31,9 +32,13 @@ export default class Calendar extends Component {
     return (
       <div className="calendar">
         <div className="calendar-header">
+
+          {/* TITLE */}
           <div className="title">
             <h2>{this.months[this.state.currentDay.getMonth()]} {this.state.currentDay.getFullYear()}</h2>
           </div>
+
+          {/* TOOLS */}
           <div className="tools">
             <button onClick={this.previousDay}>
               <span className="material-icons">
@@ -48,14 +53,17 @@ export default class Calendar extends Component {
             </button>
           </div>
         </div>
+
+        {/* BODY */}
         <div className="calendar-body">
           <div className="table-header">
             {
-              this.weekdays.map((weekday) => {
-                return <div className="weekday"><p>{weekday}</p></div>
+              this.weekdays.map((weekday, index) => {
+                return <div key={index} className="weekday"><p>{weekday}</p></div>
               })
             }
           </div>
+          {/* These are the cells (days) in the calendar */}
           <CalendarDays day={this.state.currentDay} changeCurrentDay={this.changeCurrentDay} />
         </div>
       </div>
